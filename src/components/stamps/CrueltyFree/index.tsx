@@ -1,8 +1,12 @@
-export function CrueltyFree() {
+interface CrueltyFreeProps {
+  size: number
+}
+
+export function CrueltyFree({ size }: CrueltyFreeProps) {
   return (
     <svg
-      width={89}
-      height={89}
+      width={size}
+      height={size}
       viewBox="0 0 89 89"
       fill=""
       xmlns="http://www.w3.org/2000/svg"

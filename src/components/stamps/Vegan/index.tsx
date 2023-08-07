@@ -1,8 +1,12 @@
-export function Vegan() {
+interface VeganProps {
+  size: number
+}
+
+export function Vegan({ size }: VeganProps) {
   return (
     <svg
-      width={89}
-      height={89}
+      width={size}
+      height={size}
       viewBox="0 0 89 89"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

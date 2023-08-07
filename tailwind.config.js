@@ -4,21 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        violet: {
-          'lola-pink': '#EF2687',
-          'lola-red': '#F10C42',
-          'lola-orange': '#FB7E1E',
-          'lola-yellow': '#FDCE01',
-          'lola-green': '#08B173',
-          'lola-white': '#FFFBD6',
-          'lola-black': '#000000',
-        },
+        'lola-pink-500': '#EF2687',
+        'lola-red-500': '#E8315C',
+        'lola-orange-500': '#FB7E1E',
+        'lola-yellow-500': '#FDCE01',
+        'lola-green-500': '#08B173',
+        'lola-white-500': '#FFFBD6',
+        'lola-black-900': '#000000',
       },
 
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
-        oswald: ['Oswald', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        anton: ['var(--font-anton)', 'sans-serif'],
+        oswald: ['var(--font-oswald)', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
       },
     },
   },

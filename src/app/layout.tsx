@@ -2,12 +2,19 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Anton, Oswald } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 const anton = Anton({
   subsets: ['latin'],
   weight: '400',
+  variable: '--font-anton',
 })
-const oswald = Oswald({ subsets: ['latin'] })
+const oswald = Oswald({
+  subsets: ['latin'],
+  variable: '--font-oswald',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,13 +28,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className="antialiased">
-      <body className={anton.className}>
-        <div className={inter.className}>
-          <div className={oswald.className}>
-            <div className="flex h-screen w-screen flex-col items-center bg-violet-lola-white">
-              {children}
-            </div>
-          </div>
+      <body
+        className={`${inter.variable} ${anton.variable} ${oswald.variable}`}
+      >
+        <div className="flex h-screen w-screen flex-col items-center overflow-x-hidden bg-lola-white-500">
+          {children}
         </div>
       </body>
     </html>
