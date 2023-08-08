@@ -21,7 +21,7 @@ export default function Home() {
 
         <div className="w-full scroll-smooth bg-lola-pink-500 lg:h-full lg:overflow-auto">
           <div className="flex w-full flex-col items-center gap-1 bg-lola-orange-500 p-6 lg:p-7">
-            <h1 className="font-anton text-xl text-lola-white-500 lg:text-2xl">
+            <h1 className="font-anton text-2xl text-lola-white-500 lg:text-3xl">
               CONHEÇA ESTE PRODUTO LOLÍSTICO!
             </h1>
             <p className="text-center font-inter text-xs text-lola-white-500 lg:text-sm">

@@ -11,7 +11,7 @@ export default function StampsContent() {
         <CertifiedVegan size={72} />
       </div>
       <p className="w-full text-right font-inter text-[8px] lg:text-sm">
-        *A imagem desde produto babadeiro é meramente ilustrativa, tá bom
+        *A imagem deste produto babadeiro é meramente ilustrativa, tá bom
         Lolete?
       </p>
     </>

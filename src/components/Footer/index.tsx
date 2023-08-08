@@ -2,6 +2,7 @@ import {
   FacebookLogo,
   InstagramLogo,
   TwitterLogo,
+  WhatsappLogo,
   YoutubeLogo,
 } from 'phosphor-react'
 
@@ -14,11 +15,19 @@ export default function Footer() {
             Contato
           </h4>
           <p className="flex gap-1 text-center font-inter">
-            LOLAMAIL@LOLACOSMETICS.COM.BR
+            SAC@LOLAFROMRIO.COM.BR
           </p>
           <p className="flex gap-1 text-center font-inter">
             SAC:SEG À SEX DAS 9H ÀS 18H
           </p>
+          <a
+            href="https://wa.me/5521970059241"
+            target="_blank"
+            className="flex items-center justify-center gap-1 text-center font-inter hover:text-lola-pink-900"
+          >
+            <WhatsappLogo weight="fill" size={24} />
+            21 97005-9241
+          </a>
         </div>
         <div className="flex w-full flex-col gap-2">
           <h4 className="w-full text-center font-anton text-2xl font-medium text-lola-white-500">
