@@ -94,7 +94,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full bg-lola-pink-500 lg:h-screen lg:overflow-auto">
+        <div className="w-full bg-lola-pink-500 lg:h-full lg:overflow-auto">
           <div className="flex w-full flex-col items-center gap-3 bg-lola-orange-500 p-8">
             <h1 className="font-anton text-4xl text-lola-white-500">
               Saiba Mais
