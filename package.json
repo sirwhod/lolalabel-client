@@ -20,6 +20,7 @@
     "country-flag-icons": "^1.5.7",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "framer-motion": "^10.15.1",
     "next": "13.4.12",
     "phosphor-react": "^1.4.1",
     "postcss": "8.4.27",
