@@ -6,10 +6,8 @@ import remarkGfm from 'remark-gfm'
 import Image from 'next/image'
 import {
   CaretDown,
-  Envelope,
   FacebookLogo,
   InstagramLogo,
-  Timer,
   TwitterLogo,
   Warning,
   YoutubeLogo,
@@ -17,17 +15,10 @@ import {
 
 import * as Accordion from '@radix-ui/react-accordion'
 import * as Dialog from '@radix-ui/react-dialog'
-import { CrueltyFree } from '@/components/stamps/CrueltyFree'
-import { Recycle } from '@/components/stamps/Recycle'
-import { Vegan } from '@/components/stamps/Vegan'
 import { BR, US } from 'country-flag-icons/react/3x2'
 import { CertifiedVegan } from '@/components/stamps/CertifiedVegan'
-import { ReuseMe } from '@/components/stamps/ReuseMe'
 import { ThermalProtection } from '@/components/stamps/ThermalProtection'
-import { Glitter } from '@/components/stamps/Glitter'
-import { Pea } from '@/components/stamps/Pea'
 import { ProtectionColor } from '@/components/stamps/ProtectionColor'
-import { CosmeCert } from '@/components/stamps/CosmeCert'
 import { WavesRio } from '@/components/ImagesComponents/WavesRio'
 import { LogoLolaFromRio } from '@/components/ImagesComponents/LogoLolaFromRio'
 
@@ -53,14 +44,14 @@ export default function Home() {
                   <Warning
                     size={64}
                     weight="fill"
-                    className="text-violet-lola-yellow"
+                    className="text-lola-yellow-500"
                   />
-                  <h1 className="text-violet-lola-yellow font-anton text-4xl">
+                  <h1 className="font-anton text-4xl text-lola-yellow-500">
                     Atenção
                   </h1>
                 </Dialog.Title>
                 <Dialog.Description className="flex flex-col items-center justify-center gap-5 ">
-                  <span className="text-violet-lola-yellow font-inter text-base">
+                  <span className="font-inter text-base text-lola-yellow-500">
                     As imagens contidas neste site são meramente ilustrativas!
                   </span>
 
@@ -314,42 +305,42 @@ A table:
                 </p>
               </div>
               <div className="flex w-full flex-col gap-2">
-                <h4 className="w-full text-center font-anton text-2xl font-medium text-lola-yellow-500">
+                <h4 className="w-full text-center font-anton text-2xl font-medium text-lola-white-500">
                   #SIGALOLA
                 </h4>
                 <div className="flex w-full items-center justify-center gap-2">
                   <a
                     href="https://www.facebook.com/lolacosmetics/"
                     target="_blank"
-                    className="flex flex-col items-center justify-center text-lola-yellow-500"
+                    className="flex flex-col items-center justify-center text-lola-white-500"
                   >
                     <FacebookLogo size={32} weight="fill" />
                   </a>
                   <a
                     href="https://www.instagram.com/lolacosmetics/?hl=pt-br"
                     target="_blank"
-                    className="flex flex-col items-center justify-center text-lola-yellow-500"
+                    className="flex flex-col items-center justify-center text-lola-white-500"
                   >
                     <InstagramLogo size={32} weight="fill" />
                   </a>
                   <a
                     href="https://twitter.com/lola_cosmetics"
                     target="_blank"
-                    className="flex flex-col items-center justify-center text-lola-yellow-500"
+                    className="flex flex-col items-center justify-center text-lola-white-500"
                   >
                     <TwitterLogo size={32} weight="fill" />
                   </a>
                   <a
                     href="https://www.youtube.com/channel/UC7lsjCBoDazMtvf_KUcNFcg"
                     target="_blank"
-                    className="flex flex-col items-center justify-center text-lola-yellow-500"
+                    className="flex flex-col items-center justify-center text-lola-white-500"
                   >
                     <YoutubeLogo size={32} weight="fill" />
                   </a>
                 </div>
               </div>
             </div>
-            <div className="flex w-full flex-col items-center justify-center bg-lola-pink-500 py-14">
+            <div className="flex w-full flex-col items-center justify-center bg-lola-pink-500 pb-14">
               <h1 className="bg-lola-orange-500 p-1 font-anton text-2xl font-normal text-lola-white-500">
                 ESCOLHA LOLA, ESCOLHA SER FELIZ!
               </h1>
