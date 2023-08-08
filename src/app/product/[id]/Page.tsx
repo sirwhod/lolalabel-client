@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 
 import Image from 'next/image'
 import {
+  CaretDown,
   FacebookLogo,
   InstagramLogo,
   TwitterLogo,
@@ -12,14 +13,16 @@ import {
   YoutubeLogo,
 } from 'phosphor-react'
 
-import * as Tabs from '@radix-ui/react-tabs'
+import * as Accordion from '@radix-ui/react-accordion'
 import * as Dialog from '@radix-ui/react-dialog'
-import { BR, ES, FR, US } from 'country-flag-icons/react/3x2'
+import { BR, US } from 'country-flag-icons/react/3x2'
 import { CertifiedVegan } from '@/components/Assets/stamps/CertifiedVegan'
 import { ThermalProtection } from '@/components/Assets/stamps/ThermalProtection'
 import { ProtectionColor } from '@/components/Assets/stamps/ProtectionColor'
 
-export default function Home() {
+export default function Page({ params }: { params: { id: string } }) {
+  console.log(params.id)
+
   return (
     <>
       <div className="flex w-full flex-col overflow-x-hidden lg:grid  lg:grid-cols-2">
@@ -73,13 +76,6 @@ export default function Home() {
               <ThermalProtection size={72} />
               <ProtectionColor size={72} />
               <CertifiedVegan size={72} />
-              {/* <CrueltyFree size={64} />
-            <CosmeCert size={64} />
-            <Recycle size={64} />
-            <ReuseMe size={64} />
-            <Glitter size={64} />
-            <Vegan size={64} />
-            <Pea size={64} /> */}
             </div>
           </div>
         </div>
@@ -93,44 +89,30 @@ export default function Home() {
               linguagem!
             </p>
           </div>
-
-          <Tabs.Root orientation="vertical" defaultValue="Português">
-            <Tabs.List className="flex w-full bg-lola-yellow-500">
-              <Tabs.Trigger
-                value="Português"
-                className="flex items-center justify-center p-2 hover:bg-lola-green-500 data-[state=active]:bg-lola-green-500"
-              >
-                <BR className="h-10" />
-              </Tabs.Trigger>
-              <Tabs.Trigger
-                value="Inglês"
-                className="flex items-center justify-center p-2 hover:bg-lola-green-500 data-[state=active]:bg-lola-green-500"
-              >
-                <US className="h-10" />
-              </Tabs.Trigger>
-              <Tabs.Trigger
-                value="Espanhol"
-                className="flex items-center justify-center p-2 hover:bg-lola-green-500 data-[state=active]:bg-lola-green-500"
-              >
-                <ES className="h-10" />
-              </Tabs.Trigger>
-              <Tabs.Trigger
-                value="Francês"
-                className="flex items-center justify-center p-2 hover:bg-lola-green-500 data-[state=active]:bg-lola-green-500"
-              >
-                <FR className="h-10" />
-              </Tabs.Trigger>
-            </Tabs.List>
-            <Tabs.Content value="Português">
-              <div className="flex w-full flex-col gap-8 bg-lola-green-500 p-8 text-lola-white-500">
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  O que Sou?
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
+          <Accordion.Root type="single" defaultValue="Português" collapsible>
+            <Accordion.Item value="Português">
+              <Accordion.Header>
+                <Accordion.Trigger className="group flex w-full items-center justify-between bg-lola-yellow-500 p-4">
+                  <BR className="h-10" />
+                  <span className="font-oswald text-4xl font-bold">
+                    Português
+                  </span>
+                  <CaretDown
+                    size={32}
+                    className="group-data-[state=open]:translate-y transition-all group-data-[state=open]:rotate-180"
+                  />
+                </Accordion.Trigger>
+              </Accordion.Header>
+              <Accordion.Content className="transition-all">
+                <div className="flex w-full flex-col gap-8 bg-lola-green-500 p-8 text-lola-white-500">
+                  <h1 className="w-full text-center font-inter text-3xl font-bold">
+                    O que Sou?
+                  </h1>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className="font-inter text-base font-normal"
+                  >
+                    {`A paragraph with *emphasis* and **strong importance**.
 
 > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
 
@@ -143,15 +125,15 @@ A table:
 | a | b |
 | - | - |
 `}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Modo de uso
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
+                  </ReactMarkdown>
+                  <h1 className="w-full text-center font-inter text-3xl font-bold">
+                    Modo de uso
+                  </h1>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className="font-inter text-base font-normal"
+                  >
+                    {`A paragraph with *emphasis* and **strong importance**.
 
 > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
 
@@ -164,15 +146,15 @@ A table:
 | a | b |
 | - | - |
 `}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Precauções
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
+                  </ReactMarkdown>
+                  <h1 className="w-full text-center font-inter text-3xl font-bold">
+                    Precauções
+                  </h1>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className="font-inter text-base font-normal"
+                  >
+                    {`A paragraph with *emphasis* and **strong importance**.
 
 > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
 
@@ -185,19 +167,31 @@ A table:
 | a | b |
 | - | - |
 `}
-                </ReactMarkdown>
-              </div>
-            </Tabs.Content>
-            <Tabs.Content value="Inglês">
-              <div className="flex w-full flex-col gap-8 bg-lola-green-500 p-8 text-lola-white-500">
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  O que Sou?
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
+                  </ReactMarkdown>
+                </div>
+              </Accordion.Content>
+            </Accordion.Item>
+            <Accordion.Item value="Inglês">
+              <Accordion.Header>
+                <Accordion.Trigger className="group flex w-full items-center justify-between bg-lola-yellow-500 p-4">
+                  <US className="h-10" />
+                  <span className="font-oswald text-4xl font-bold">Inglês</span>
+                  <CaretDown
+                    size={32}
+                    className="group-data-[state=open]:translate-y transition-all group-data-[state=open]:rotate-180"
+                  />
+                </Accordion.Trigger>
+              </Accordion.Header>
+              <Accordion.Content className="transition-all">
+                <div className="flex w-full flex-col gap-8 bg-lola-green-500 p-8 text-lola-white-500">
+                  <h1 className="w-full text-center font-inter text-3xl font-bold">
+                    O que Sou?
+                  </h1>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className="font-inter text-base font-normal"
+                  >
+                    {`A paragraph with *emphasis* and **strong importance**.
 
 > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
 
@@ -210,15 +204,15 @@ A table:
 | a | b |
 | - | - |
 `}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Modo de uso
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
+                  </ReactMarkdown>
+                  <h1 className="w-full text-center font-inter text-3xl font-bold">
+                    Modo de uso
+                  </h1>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className="font-inter text-base font-normal"
+                  >
+                    {`A paragraph with *emphasis* and **strong importance**.
 
 > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
 
@@ -231,15 +225,15 @@ A table:
 | a | b |
 | - | - |
 `}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Precauções
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
+                  </ReactMarkdown>
+                  <h1 className="w-full text-center font-inter text-3xl font-bold">
+                    Precauções
+                  </h1>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className="font-inter text-base font-normal"
+                  >
+                    {`A paragraph with *emphasis* and **strong importance**.
 
 > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
 
@@ -252,144 +246,11 @@ A table:
 | a | b |
 | - | - |
 `}
-                </ReactMarkdown>
-              </div>
-            </Tabs.Content>
-            <Tabs.Content value="Espanhol">
-              <div className="flex w-full flex-col gap-8 bg-lola-green-500 p-8 text-lola-white-500">
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  O que Sou?
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Modo de uso
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Precauções
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
-                </ReactMarkdown>
-              </div>
-            </Tabs.Content>
-            <Tabs.Content value="Francês">
-              <div className="flex w-full flex-col gap-8 bg-lola-green-500 p-8 text-lola-white-500">
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  O que Sou?
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Modo de uso
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
-                </ReactMarkdown>
-                <h1 className="w-full text-center font-inter text-3xl font-bold">
-                  Precauções
-                </h1>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className="font-inter text-base font-normal"
-                >
-                  {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
-                </ReactMarkdown>
-              </div>
-            </Tabs.Content>
-          </Tabs.Root>
+                  </ReactMarkdown>
+                </div>
+              </Accordion.Content>
+            </Accordion.Item>
+          </Accordion.Root>
 
           <div className="flex w-full flex-col items-center gap-4 bg-lola-red-500 p-8">
             <h2 className="w-full font-anton text-2xl text-lola-white-500">

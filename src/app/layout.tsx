@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Anton, Oswald } from 'next/font/google'
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${inter.variable} ${anton.variable} ${oswald.variable}`}
       >
         <div className="flex h-screen w-screen flex-col items-center overflow-x-hidden bg-lola-white-500">
+          <Header />
           {children}
         </div>
       </body>
