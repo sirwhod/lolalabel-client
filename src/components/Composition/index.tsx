@@ -5,10 +5,7 @@ export default function Composition() {
   return (
     <div className="flex w-full flex-col items-center gap-4 bg-lola-red-500 p-8">
       <h2 className="w-full font-anton text-2xl text-lola-white-500">
-        Composição{' '}
-        <span className="font-anton text-lg text-lola-white-500">
-          (Composition)
-        </span>
+        Minha composição:
       </h2>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}

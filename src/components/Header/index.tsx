@@ -7,7 +7,7 @@ export function Header() {
       <div className="absolute z-20 ">
         <LogoLolaFromRio size={72} />
       </div>
-      <div className="max-w-screen relative z-10 max-h-20 overflow-hidden lg:w-full">
+      <div className="max-w-screen relative z-10 max-h-24 overflow-hidden lg:w-full">
         <WavesRio color="#FDCE01" />
       </div>
     </div>
