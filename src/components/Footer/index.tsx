@@ -28,28 +28,28 @@ export default function Footer() {
             <a
               href="https://www.facebook.com/lolacosmetics/"
               target="_blank"
-              className="flex flex-col items-center justify-center text-lola-white-500"
+              className="flex flex-col items-center justify-center text-lola-white-500 hover:text-lola-pink-900"
             >
               <FacebookLogo size={32} weight="fill" />
             </a>
             <a
               href="https://www.instagram.com/lolacosmetics/?hl=pt-br"
               target="_blank"
-              className="flex flex-col items-center justify-center text-lola-white-500"
+              className="flex flex-col items-center justify-center text-lola-white-500 hover:text-lola-pink-900"
             >
               <InstagramLogo size={32} weight="fill" />
             </a>
             <a
               href="https://twitter.com/lola_cosmetics"
               target="_blank"
-              className="flex flex-col items-center justify-center text-lola-white-500"
+              className="flex flex-col items-center justify-center text-lola-white-500 hover:text-lola-pink-900"
             >
               <TwitterLogo size={32} weight="fill" />
             </a>
             <a
               href="https://www.youtube.com/channel/UC7lsjCBoDazMtvf_KUcNFcg"
               target="_blank"
-              className="flex flex-col items-center justify-center text-lola-white-500"
+              className="flex flex-col items-center justify-center text-lola-white-500 hover:text-lola-pink-900"
             >
               <YoutubeLogo size={32} weight="fill" />
             </a>
