@@ -63,26 +63,27 @@ A table:
         {language === 'Português' ? (
           <>
             <h1 className="w-full text-center font-inter text-3xl font-bold">
-              Modo de uso
+              Como devo ser usado?
             </h1>
           </>
         ) : language === 'Inglês' ? (
           <>
             <h1 className="w-full text-center font-inter text-3xl font-bold">
-              mode of use
+              Como devo ser usado?
             </h1>
           </>
         ) : language === 'Espanhol' ? (
           <>
             <h1 className="w-full text-center font-inter text-3xl font-bold">
-              Modo de uso
+              ¿Cómo debo ser utilizado?
             </h1>
           </>
         ) : (
           language === 'Francês' && (
             <>
               <h1 className="w-full text-center font-inter text-3xl font-bold">
-                {`Mode d'utilisation`}
+                {`
+Comment dois-je être utilisé ?`}
               </h1>
             </>
           )

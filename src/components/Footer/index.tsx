@@ -18,7 +18,7 @@ export default function Footer() {
             SAC@LOLAFROMRIO.COM.BR
           </p>
           <p className="flex gap-1 text-center font-inter">
-            SAC:SEG À SEX DAS 9H ÀS 18H
+            SAC: SEG À SEX DAS 9H ÀS 18H
           </p>
           <a
             href="https://wa.me/5521970059241"
