@@ -1,15 +1,16 @@
 'use client'
 
+import { InstructionProps } from '@/context/ProductContext/types'
 import * as Tabs from '@radix-ui/react-tabs'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 export interface TabItemProps {
   language: string
-  value: string
+  value: InstructionProps
 }
 
-export function TabContent({ language }: TabItemProps) {
+export function TabContent({ language, value }: TabItemProps) {
   return (
     <Tabs.Content value={language}>
       <div className="flex w-full flex-col gap-8 bg-lola-green-500 p-8 text-lola-white-500">
@@ -31,11 +32,23 @@ export function TabContent({ language }: TabItemProps) {
               ¿Lo que soy?
             </h1>
           </>
+        ) : language === 'Francês' ? (
+          <>
+            <h1 className="w-full text-center font-inter text-3xl font-bold">
+              Ce que je suis?
+            </h1>
+          </>
+        ) : language === 'Alemão' ? (
+          <>
+            <h1 className="w-full text-center font-inter text-3xl font-bold">
+              {`Was ich bin?`}
+            </h1>
+          </>
         ) : (
-          language === 'Francês' && (
+          language === 'Russo' && (
             <>
               <h1 className="w-full text-center font-inter text-3xl font-bold">
-                Ce que je suis?
+                {`То, что я?`}
               </h1>
             </>
           )
@@ -45,19 +58,7 @@ export function TabContent({ language }: TabItemProps) {
           remarkPlugins={[remarkGfm]}
           className="font-inter text-base font-normal"
         >
-          {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
+          {value.whatIAm}
         </ReactMarkdown>
 
         {language === 'Português' ? (
@@ -69,7 +70,7 @@ A table:
         ) : language === 'Inglês' ? (
           <>
             <h1 className="w-full text-center font-inter text-3xl font-bold">
-              Como devo ser usado?
+              How should I be used?
             </h1>
           </>
         ) : language === 'Espanhol' ? (
@@ -78,12 +79,24 @@ A table:
               ¿Cómo debo ser utilizado?
             </h1>
           </>
+        ) : language === 'Francês' ? (
+          <>
+            <h1 className="w-full text-center font-inter text-3xl font-bold">
+              {`
+Comment dois-je être utilisé ?`}
+            </h1>
+          </>
+        ) : language === 'Alemão' ? (
+          <>
+            <h1 className="w-full text-center font-inter text-3xl font-bold">
+              {`Wie soll ich angewendet werden?`}
+            </h1>
+          </>
         ) : (
-          language === 'Francês' && (
+          language === 'Russo' && (
             <>
               <h1 className="w-full text-center font-inter text-3xl font-bold">
-                {`
-Comment dois-je être utilisé ?`}
+                {`Как меня следует использовать?`}
               </h1>
             </>
           )
@@ -93,19 +106,7 @@ Comment dois-je être utilisé ?`}
           remarkPlugins={[remarkGfm]}
           className="font-inter text-base font-normal"
         >
-          {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
+          {value.modeOfUse}
         </ReactMarkdown>
 
         {language === 'Português' ? (
@@ -126,11 +127,23 @@ A table:
               Precauciones
             </h1>
           </>
+        ) : language === 'Francês' ? (
+          <>
+            <h1 className="w-full text-center font-inter text-3xl font-bold">
+              {`Précautions`}
+            </h1>
+          </>
+        ) : language === 'Alemão' ? (
+          <>
+            <h1 className="w-full text-center font-inter text-3xl font-bold">
+              {`Vorsicht`}
+            </h1>
+          </>
         ) : (
-          language === 'Francês' && (
+          language === 'Russo' && (
             <>
               <h1 className="w-full text-center font-inter text-3xl font-bold">
-                {`Précautions`}
+                {`Меры предосторожности`}
               </h1>
             </>
           )
@@ -140,19 +153,7 @@ A table:
           remarkPlugins={[remarkGfm]}
           className="font-inter text-base font-normal"
         >
-          {`A paragraph with *emphasis* and **strong importance**.
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`}
+          {value.Precaution}
         </ReactMarkdown>
       </div>
     </Tabs.Content>

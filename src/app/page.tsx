@@ -3,16 +3,16 @@
 import { LanguageTabs } from '@/components/LanguageTabs'
 import Footer from '@/components/Footer'
 import Composition from '@/components/Composition'
-// import ModalAlert from '@/components/ModalAlert'
+import ModalAlert from '@/components/ModalAlert'
 import CardProduct from '@/components/CardProduct'
-import StampsContent from '@/components/StampsContent/inde'
+import StampsContent from '@/components/StampsContent'
 
 export default function Home() {
   return (
     <>
       <div className="flex w-full flex-col overflow-x-hidden lg:grid  lg:grid-cols-2">
         <div className="lg:flex lg:max-h-full lg:w-full lg:justify-center">
-          {/* <ModalAlert /> */}
+          <ModalAlert />
           <div className="flex w-full flex-col items-center justify-center bg-lola-white-500 p-8">
             <CardProduct />
             <StampsContent />
@@ -25,7 +25,7 @@ export default function Home() {
               CONHEÇA ESTE PRODUTO LOLÍSTICO!
             </h1>
             <p className="text-center font-inter text-xs text-lola-white-500 lg:text-sm">
-              Selecione seu idioma abaixo e confira todas as as informações do
+              Selecione seu idioma abaixo e confira todas as informações do
               produto!
             </p>
           </div>

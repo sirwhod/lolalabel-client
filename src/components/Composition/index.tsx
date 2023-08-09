@@ -1,29 +1,46 @@
+import { useProduct } from '@/context/ProductContext/useProduct'
+import { CircleNotch } from 'phosphor-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 export default function Composition() {
-  return (
-    <div className="flex w-full flex-col items-center gap-4 bg-lola-red-500 p-8">
-      <h2 className="w-full font-anton text-2xl text-lola-white-500">
-        Minha composição:
-      </h2>
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        className="w-full font-inter text-base text-lola-white-500"
-      >
-        {`Aqua/Eau/Water, Cetearyl Alcohol, Behentrimonium Methosulfate,
-          Caprylic/Capric Triglyceride, Orbignya Oleifera Seed Oil, Peg-180M,
-          Phytosteryl/Behenyl,/Octyldodecyl Lauroyl Glutamate, Aqua (and)
-          Hydrolyzed Vegetable Protein PG-Propyl Silanetriol, PPG-3 Benzyl Ether
-          Myristrate, Theobroma Cacao (Cocoa), Seed Butter, Hydrogenated
-          Farnesene, Aloe Barbadensis Leaf Extract, Cetrimonium Chloride, Sodium
-          PCA (and) Sodium Lactate (and) Aginine (and) Aspartic acid (and) PCA
-          (and) Glycine (and) Alanine (and) Serine (and) Valine (and) Proline
-          (and) Threonine (and) Isoleucine (and) Histidine (and)
-          Phenylanine/Propylene Glycol, Hydroxyethyl Urea, Disodium EDTA, BHT,
-          Citric Acid, Caprylyl Glycol (and) Phenoxyethanol, Fragrance/Parfum,
-          Linalool, Limonene.`}
-      </ReactMarkdown>
-    </div>
-  )
+  const { product } = useProduct()
+
+  if (product !== undefined && product !== null) {
+    const { composition } = product
+    return (
+      <div className="flex w-full flex-col items-center gap-4 bg-lola-red-500 p-8">
+        <h2 className="w-full font-anton text-2xl text-lola-white-500">
+          Minha composição:
+        </h2>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          className="w-full font-inter text-base text-lola-white-500"
+        >
+          {composition}
+        </ReactMarkdown>
+      </div>
+    )
+  } else {
+    return (
+      <div className="relative flex w-full flex-col items-center justify-center gap-4 bg-lola-red-500 p-8">
+        <div className="relative z-10 flex w-full animate-pulse flex-col items-center justify-center gap-2 overflow-hidden">
+          <div className="h-8 w-full rounded-md bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+          <div className="h-3 w-full rounded-sm bg-red-400" />
+        </div>
+        <CircleNotch
+          size={48}
+          weight="bold"
+          className="absolute z-20 animate-spin text-lola-white-500"
+        />
+      </div>
+    )
+  }
 }

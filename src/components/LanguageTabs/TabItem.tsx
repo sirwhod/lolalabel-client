@@ -14,7 +14,7 @@ export function TabItem({ flag, title, isSelected = false }: TabItemProps) {
   return (
     <Tabs.Trigger
       value={title}
-      className="relative flex items-center justify-center p-2 hover:bg-lola-orange-500 "
+      className="relative flex snap-center items-center justify-center p-2 hover:bg-lola-orange-500 "
     >
       {isSelected && (
         <>
