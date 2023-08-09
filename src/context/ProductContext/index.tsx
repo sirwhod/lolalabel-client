@@ -14,9 +14,7 @@ export const ProductContext = createContext<ContextProduct>(
 )
 
 export function ProductProvider({ children }: ProductProviderProps) {
-  const [idProduct, setIdProduct] = useState<string>(
-    'e248abda-43db-4c56-839b-6d104fae4868',
-  )
+  const [idProduct, setIdProduct] = useState<string>('')
   const [product, setProduct] = useState<ProductProps | null>()
   const [stamps, setStamps] = useState<StampProps[]>()
   const [instructions, setInstructions] = useState<InstructionProps[]>()
@@ -35,7 +33,7 @@ export function ProductProvider({ children }: ProductProviderProps) {
 
   useEffect(() => {
     getDataProduct()
-  }, [])
+  }, [idProduct])
 
   return (
     <ProductContext.Provider
@@ -43,6 +41,7 @@ export function ProductProvider({ children }: ProductProviderProps) {
         product,
         stamps,
         instructions,
+        setIdProduct,
       }}
     >
       {children}

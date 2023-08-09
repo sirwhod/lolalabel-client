@@ -6,8 +6,16 @@ import Composition from '@/components/Composition'
 import ModalAlert from '@/components/ModalAlert'
 import CardProduct from '@/components/CardProduct'
 import StampsContent from '@/components/StampsContent'
+import { useProduct } from '@/context/ProductContext/useProduct'
+import { useEffect } from 'react'
 
 export default function Home() {
+  const { setIdProduct } = useProduct()
+
+  useEffect(() => {
+    setIdProduct('e248abda-43db-4c56-839b-6d104fae4868')
+  }, [])
+
   return (
     <>
       <div className="flex w-full flex-col overflow-x-hidden lg:grid  lg:grid-cols-2">

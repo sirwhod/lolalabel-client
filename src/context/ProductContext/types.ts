@@ -31,6 +31,7 @@ export interface ContextProduct {
   product: ProductProps | null | undefined
   stamps: StampProps[] | undefined
   instructions: InstructionProps[] | undefined
+  setIdProduct: (id: string) => void
 }
 
 export interface ProductProviderProps {

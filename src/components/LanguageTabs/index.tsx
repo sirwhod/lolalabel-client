@@ -22,7 +22,10 @@ export function LanguageTabs() {
     return (
       <>
         <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
-          <Tabs.List className="flex w-full snap-x snap-mandatory items-center overflow-auto bg-lola-yellow-500">
+          <Tabs.List
+            key={'Languages'}
+            className="flex w-full snap-x snap-mandatory items-center overflow-auto bg-lola-yellow-500"
+          >
             {instructions.map((instruction) => {
               if (instruction.language === 'Português') {
                 return (
