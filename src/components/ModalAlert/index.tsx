@@ -2,7 +2,18 @@ import { Warning } from 'phosphor-react'
 
 import * as Dialog from '@radix-ui/react-dialog'
 
-export default function ModalAlert() {
+interface ModalAlertProps {
+  notProduct?: boolean
+  title: string
+  description: string
+  buttonText: string
+}
+
+export default function ModalAlert({
+  title,
+  description,
+  buttonText,
+}: ModalAlertProps) {
   return (
     <Dialog.Root defaultOpen>
       <Dialog.Trigger />
@@ -15,18 +26,15 @@ export default function ModalAlert() {
               weight="duotone"
               className="text-lola-white-500"
             />
-            <h1 className="font-anton text-4xl text-lola-white-500">
-              ATENÇÃO, LOLETES!
-            </h1>
+            <h1 className="font-anton text-4xl text-lola-white-500">{title}</h1>
           </Dialog.Title>
           <Dialog.Description className="flex flex-col items-center justify-center gap-5 ">
             <span className="font-inter text-base text-lola-white-500">
-              As imagens babadeiras deste site são meramente ilustrativas, tá
-              bom?
+              {description}
             </span>
 
             <Dialog.Close className="bg-lola-green-500 px-8 py-0.5 font-anton text-xl text-lola-white-500 hover:bg-lola-orange-500">
-              OK, LOLINHA!
+              {buttonText}
             </Dialog.Close>
           </Dialog.Description>
         </Dialog.Content>

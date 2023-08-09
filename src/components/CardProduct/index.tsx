@@ -16,13 +16,19 @@ export default function CardProduct() {
           {product.productName}
         </h3>
 
-        <Image
-          src={product.productImage}
-          width={600}
-          height={600}
-          className="h-80 w-80 lg:h-[500px] lg:w-[500px]"
-          alt=""
-        />
+        {product.productImage !== '' ? (
+          <Image
+            src={product.productImage}
+            width={600}
+            height={600}
+            className="h-80 w-80 lg:h-[500px] lg:w-[500px]"
+            alt=""
+          />
+        ) : (
+          <div className="flex items-center justify-center overflow-hidden lg:h-[500px] lg:w-[500px]">
+            <LoadingProduct size={320} />
+          </div>
+        )}
         <h4 className="w-full font-inter text-sm font-bold">
           {product.version}
         </h4>

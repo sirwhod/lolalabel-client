@@ -34,7 +34,6 @@ export default function RootLayout({
         className={`${inter.variable} ${anton.variable} ${oswald.variable}`}
       >
         <div className="flex h-screen w-screen flex-col items-center overflow-x-hidden bg-lola-white-500">
-          <Header />
           <ProductProvider>{children}</ProductProvider>
         </div>
       </body>

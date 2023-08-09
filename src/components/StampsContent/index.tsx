@@ -16,63 +16,75 @@ export default function StampsContent() {
   if (stamps !== undefined) {
     return (
       <>
-        <div className="bg-lola flex w-full flex-wrap justify-end gap-2 p-8 lg:max-w-3xl">
-          {stamps.map((stamp) => {
-            if (
-              stamp.nameStamp === 'CertifiedVeganStamp' &&
-              stamp.active === true
-            ) {
-              return <CertifiedVegan key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'CosmosStamp' &&
-              stamp.active === true
-            ) {
-              return <CosmeCert key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'GlitterStamp' &&
-              stamp.active === true
-            ) {
-              return <Glitter key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'PeaStamp' &&
-              stamp.active === true
-            ) {
-              return <Pea key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'ProtectionOfColorStamp' &&
-              stamp.active === true
-            ) {
-              return <ProtectionColor key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'RecycleStamp' &&
-              stamp.active === true
-            ) {
-              return <Recycle key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'ReuseStamp' &&
-              stamp.active === true
-            ) {
-              return <ReuseMe key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'ThermalStamp' &&
-              stamp.active === true
-            ) {
-              return <ThermalProtection key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'VeganStamp' &&
-              stamp.active === true
-            ) {
-              return <Vegan key={stamp.nameStamp} size={72} />
-            } else if (
-              stamp.nameStamp === 'CrueltyFreeStamp' &&
-              stamp.active === true
-            ) {
-              return <CrueltyFree key={stamp.nameStamp} size={72} />
-            } else {
-              return <></>
-            }
-          })}
-        </div>
+        {stamps.length > 0 ? (
+          <>
+            <div className="bg-lola flex w-full flex-wrap justify-end gap-2 p-8 lg:max-w-3xl">
+              {stamps.map((stamp) => {
+                if (
+                  stamp.nameStamp === 'CertifiedVeganStamp' &&
+                  stamp.active === true
+                ) {
+                  return <CertifiedVegan key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'CosmosStamp' &&
+                  stamp.active === true
+                ) {
+                  return <CosmeCert key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'GlitterStamp' &&
+                  stamp.active === true
+                ) {
+                  return <Glitter key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'PeaStamp' &&
+                  stamp.active === true
+                ) {
+                  return <Pea key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'ProtectionOfColorStamp' &&
+                  stamp.active === true
+                ) {
+                  return <ProtectionColor key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'RecycleStamp' &&
+                  stamp.active === true
+                ) {
+                  return <Recycle key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'ReuseStamp' &&
+                  stamp.active === true
+                ) {
+                  return <ReuseMe key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'ThermalStamp' &&
+                  stamp.active === true
+                ) {
+                  return <ThermalProtection key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'VeganStamp' &&
+                  stamp.active === true
+                ) {
+                  return <Vegan key={stamp.nameStamp} size={72} />
+                } else if (
+                  stamp.nameStamp === 'CrueltyFreeStamp' &&
+                  stamp.active === true
+                ) {
+                  return <CrueltyFree key={stamp.nameStamp} size={72} />
+                } else {
+                  return <></>
+                }
+              })}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="flex w-full animate-pulse flex-wrap items-end justify-end gap-2 rounded-md p-8 lg:max-w-3xl">
+              <div className="h-[72px] w-[72px] rounded-md bg-orange-200" />
+              <div className="h-[72px] w-[72px] rounded-md bg-orange-200" />
+              <div className="h-[72px] w-[72px] rounded-md bg-orange-200" />
+            </div>
+          </>
+        )}
         <p className="w-full text-right font-inter text-[8px] lg:text-sm">
           *A imagem deste produto babadeiro é meramente ilustrativa, tá bom
           Lolete?
